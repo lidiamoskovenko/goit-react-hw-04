@@ -1,5 +1,6 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import css from './Searchbar.module.css'
 
  const Searchbar = ({ onSubmit }) => {
   const [value, setValue] = useState('');
@@ -21,9 +22,9 @@ import toast, { Toaster } from "react-hot-toast";
   };
 
   return (
-    <header>
-      <form onSubmit={onSubmitHandler}>
-        <input
+    <header className={css.header}>
+      <form onSubmit={onSubmitHandler} className={css.form}>
+        <input className={css.input}
           type="text"
           autoComplete="off"
           autoFocus
@@ -31,7 +32,7 @@ import toast, { Toaster } from "react-hot-toast";
           onChange={createCurrentValue}
           value={value}
         />
-        <button type="submit">Search</button>
+        <button className={css.form_button} type="submit">Search</button>
        <Toaster/>
 
       </form>

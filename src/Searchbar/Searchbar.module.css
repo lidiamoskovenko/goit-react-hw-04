@@ -1,0 +1,33 @@
+.header{
+    position:fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color:aquamarine;
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 12px;
+    padding: 12px;
+
+}
+.input{
+    display: block;
+    min-width: 169px;
+    height: 30px;
+    padding: 5px;
+    background-color:bisque;
+    outline: none;
+    border:1px solid black;
+
+}
+.form_button{
+    display: block;
+    min-width: 84px;
+    padding: 0px;
+    background-color:bisque;
+    outline: none;
+    border:1px solid black;
+}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import ImageCard from '../ImageCard/ImageCard';
 import  ImageModal  from "../ImageModal/ImageModal";
-
+import css from './ImageGallery.module.css'
 
 const ImageGallery = ({ images }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +18,9 @@ const ImageGallery = ({ images }) => {
 
   return (
     <div>
-      <ul>
+      <ul className={css.images_list}>
         {images.map((image) => (
-          <li key={image.id} onClick={() => openModal(image)}>
+          <li key={image.id} onClick={() => openModal(image)} className={css.images_item}>
             <ImageCard image={image} />
           </li>
         ))}
