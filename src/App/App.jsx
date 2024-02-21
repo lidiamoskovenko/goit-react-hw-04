@@ -24,7 +24,7 @@ import ErrorMessage from "../ErrorMessage/ErrorMessage.jsx";
         setLoading(true);
         setError(false);
         const fetchedData = await fetchImages(query, page);
-        setImages((prevResults) => [...prevResults, ...fetchedData.results]);
+        setImages((prevImages) => [...prevImages, ...fetchedData.results]);
         setTotal(fetchedData.total);
 
       } catch {
@@ -50,11 +50,11 @@ const loadMoreImages = () => {
 
   return (
 <div>
-<Searchbar onSubmit={searchImages}/>
+<Searchbar onSubmit={searchImages} currentQuery={query}/>
 {loading && <Loader />}
 {images.length > 0 && <ImageGallery images={images}/>}
-{images.length < total && <LoadMoreButton onClick={loadMoreImages} />}
-{total === 0 && <ErrorMessage message={'No results found 🙁'}/>}
+{images.length < total && !error && !loading  && <LoadMoreButton onClick={loadMoreImages} />}
+{total === 0 && !error &&<ErrorMessage message={`Not found, try again`}/>}
 {error &&<ErrorMessage message={' Whoops! Something bad happened, try reloading page 🥲'}/>}
 </div>)}
 

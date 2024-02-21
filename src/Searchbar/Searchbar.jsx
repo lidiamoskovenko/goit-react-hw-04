@@ -2,7 +2,7 @@ import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import css from './Searchbar.module.css'
 
- const Searchbar = ({ onSubmit }) => {
+ const Searchbar = ({ onSubmit,currentQuery }) => {
   const [value, setValue] = useState('');
 
   const createCurrentValue = (e) => {
@@ -14,6 +14,10 @@ import css from './Searchbar.module.css'
 
     if (value.trim() === '') {
       toast('Please, enter a search term');
+      return;
+    }
+    if (value.trim() === currentQuery) {
+      toast('This term is already');
       return;
     }
 

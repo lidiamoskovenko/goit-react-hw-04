@@ -16,13 +16,11 @@ const modalStyles = {
 
 Modal.setAppElement("#root");
 
-const ImageModal = ({ imageModal, isOpen, closeModal }) => {
-    return (
-      <Modal isOpen={isOpen} onRequestClose={closeModal} style={modalStyles}>
-        {imageModal && (
-          <img src={imageModal.urls.regular} alt={imageModal.description} />
-        )}
-      </Modal>
-    );
-  };
-  export default ImageModal; 
+const ImageModal = ({ src, alt, isOpen, closeModal }) => {
+  return (
+    <Modal isOpen={isOpen} onRequestClose={closeModal} style={modalStyles}>
+      <img src={src} alt={alt} />
+    </Modal>
+  );
+};
+export default ImageModal;  

@@ -1,21 +1,7 @@
- const LoadMoreButton = ({onClick}) => (
-   <button 
-   style={{ 
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      // borderRadius: '30px',
-    border:'1px solid black',
-   color:'black',
-   backgroundColor:'aquamarine',
-   minWidth: '169px',
-   height: '30px',
-   padding: '20px',
-   marginRight: 'auto',
-   marginLeft: 'auto',
+ import css from "./LoadmoreButton.module.css";
 
-}}
-   
-   type="button" onClick={onClick}>Load more</button>);
+ const LoadMoreButton = ({onClick}) => (
+
+   <button className={css.load_more_button} type="button" onClick={onClick}>Load more</button>);
 
    export default LoadMoreButton;

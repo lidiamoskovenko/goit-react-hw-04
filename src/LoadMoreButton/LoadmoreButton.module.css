@@ -1,0 +1,16 @@
+.load_more_button{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+  border:1px solid black;
+ color:black;
+ background-color:aquamarine;
+ min-width: 169px;
+ height: 30px;
+ padding: 20px;
+ margin-right: auto;
+ margin-left: auto;
+ cursor: pointer;
+}
+    
+

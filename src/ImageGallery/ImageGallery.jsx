@@ -5,7 +5,7 @@ import css from './ImageGallery.module.css'
 
 const ImageGallery = ({ images }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [modalImage, setModalImage] = useState(null);
+  const [modalImage, setModalImage] = useState(null); 
 
   function openModal(image) {
     setModalImage(image);
@@ -25,10 +25,10 @@ const ImageGallery = ({ images }) => {
           </li>
         ))}
       </ul>
-      {isOpen && (<ImageModal imageModal={modalImage} isOpen={isOpen} closeModal={closeModal}
-        />
+      {modalImage && (
+        <ImageModal src={modalImage.urls.regular} alt={modalImage.description} isOpen={isOpen} closeModal={closeModal} />
       )}
     </div>
   );
 };
-export default ImageGallery;
+export default ImageGallery;  
